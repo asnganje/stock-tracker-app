@@ -36,6 +36,8 @@ gem "kamal", require: false
 
 gem "devise"
 gem 'devise-bootstrap-views'
+gem 'alphavantage'
+gem 'httparty'
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
