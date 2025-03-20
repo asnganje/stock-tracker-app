@@ -1,0 +1,23 @@
+<h1 class="text-primary">My Portfolio</h1>
+<div class="text-center py-10">
+  <h3 >Search stocks</h3>
+  <%=form_tag search_stock_path, class:"my-3", data: {turbo: false}, remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <%=text_field_tag :stock , params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-large"%>
+      </div>
+      <div class="col-sm-3">
+        <%=button_tag type: :submit, class:"btn btn-success" do %>
+          <%= 'Search'%>
+        <%end%>
+      </div>
+    </div>
+  <%end%>
+</div>
+<%if @stock%>
+<div class="card card-header">
+  <strong>Symbol: </strong><%= @stock.ticker%>
+  <strong>Name: </strong><%= @stock.name%>
+  <strong>LAST PRICE: </strong><%= @stock.last_price%>
+</div>
+<%end%>
