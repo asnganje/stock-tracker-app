@@ -13,9 +13,11 @@ class Stock < ApplicationRecord
     if response.code == 200 && response.parsed_response['Global Quote']
         last_price = response.parsed_response['Global Quote']['05. price']
         name = company_lookup(ticker_symbol)
-        new(ticker: ticker_symbol, name: name, last_price: last_price)
-      else
-        nil
-      end
+        if name
+          return new(ticker: ticker_symbol, name: name, last_price: last_price)
+        end
+    else
+      nil
+    end
 end
 end
