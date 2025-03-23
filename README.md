@@ -1,24 +1,5 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# STOCK TRACKER APP
+The Stock Tracker App is a web-based application that fetches real-time stock 
+market data from an external API, allowing users to track stock prices. 
+Designed for investors and traders, it delivers up-to-date financial insights,
+making stock market tracking easy and efficient.
