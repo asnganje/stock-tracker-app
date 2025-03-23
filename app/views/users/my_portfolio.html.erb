@@ -1,7 +1,7 @@
 <h1 class="text-primary">My Portfolio</h1>
 <div class="text-center py-10">
   <h3 >Search stocks</h3>
-  <%=form_tag search_stock_path, class:"my-3", data: {turbo: false}, remote: true, method: :get do %>
+  <%= form_with url: search_stock_path, method: :get, data: { turbo_frame: "stock_results" }, class: "my-3" do %>
     <div class="form-group row">
       <div class="col-sm-9">
         <%=text_field_tag :stock , params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-large"%>
@@ -14,7 +14,9 @@
     </div>
   <%end%>
 </div>
-<%= render 'users/results'%>
+<turbo-frame id="stock_results">
+  <%= render 'users/results', stock: @stock %>
+</turbo-frame>
 <% if !@stocks.empty? %>
   <%= render 'stocks/list'%>
 <% end %>

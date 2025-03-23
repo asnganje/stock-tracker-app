@@ -1,7 +1,9 @@
-<%if @stock%>
-<div class="card card-header">
-  <strong>Symbol: </strong><%= @stock.ticker%>
-  <strong>Name: </strong><%= @stock.name%>
-  <strong>LAST PRICE: </strong><%= @stock.last_price%>
+<%if stock %>
+  <div class="card card-header">
+  <strong>Symbol: </strong><%= stock.ticker%>
+  <strong>Name: </strong><%= stock.name%>
+  <strong>LAST PRICE: </strong><%= stock.last_price%>
 </div>
-<%end%>
+<% else %>
+  <div class="alert alert-info col-9">No stock data available.</div>
+<% end %>
