@@ -17,6 +17,6 @@
 <turbo-frame id="stock_results">
   <%= render 'users/results', stock: @stock %>
 </turbo-frame>
-<% if !@stocks.empty? %>
-  <%= render 'stocks/list'%>
+<% if @stocks.present? && @stocks.any? %>
+  <%= render 'stocks/list' %>
 <% end %>

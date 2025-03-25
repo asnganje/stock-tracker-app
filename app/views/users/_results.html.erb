@@ -1,9 +1,14 @@
+<p>Debug: <%= stock.inspect %></p>
+
 <%if stock %>
-  <div class="card card-header">
+  <div class="card card-header col-9 my-3">
   <strong>Symbol: </strong><%= stock.ticker%>
   <strong>Name: </strong><%= stock.name%>
   <strong>LAST PRICE: </strong><%= stock.last_price%>
+  <%= button_to "Add to portfolio",
+    user_stocks_path(user:current_user, ticker:stock.ticker),
+    class:"btn btn-xs btn-success w-25", method: :post %>
 </div>
 <% else %>
-  <div class="alert alert-info col-9">No stock data available.</div>
+  <div class="alert alert-info col-9">No new stock data available.</div>
 <% end %>
