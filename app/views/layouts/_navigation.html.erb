@@ -17,10 +17,14 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Profile
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li>
+                <%= link_to 'Edit profile',
+                  edit_user_registration_path,
+                  class:"dropdown-item" 
+                %>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -31,6 +35,10 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item mt-2">
+            <%= content_tag(:i, '', class: 'bi bi-person text-dark') %>
+            <%= current_user.full_name %>
+          </li>
           <li class="nav-item">
             <%= link_to("Logout", destroy_user_session_path,
             class:"btn btn-xs btn-danger mx-2", data: {turbo_method: :delete}

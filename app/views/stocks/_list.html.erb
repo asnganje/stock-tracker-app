@@ -15,7 +15,12 @@
             <td scope="row"><%= stock.ticker %></td>
             <td><%= stock.name %></td>
             <td><%= stock.last_price %></td>
-            <td><%= "Action Placeholder" %></td>
+            <td><%= link_to 'Remove', user_stock_path(stock), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure"
+            },
+            class: "btn btn-xs btn-warning"
+            %></td>
           </tr>
         <% end %>
       </tbody>
