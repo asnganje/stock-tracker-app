@@ -6,6 +6,8 @@ updates:
     interval: daily
   ignore:
       - dependency-name: "brakeman"
+  ignore:
+      - dependency-name: "selenium-webdriver"
   open-pull-requests-limit: 10
 - package-ecosystem: github-actions
   directory: "/"
