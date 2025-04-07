@@ -6,8 +6,8 @@ updates:
     interval: daily
   ignore:
       - dependency-name: "brakeman"
-  ignore:
       - dependency-name: "selenium-webdriver"
+      - dependency-name: "tailwindcss-rails"
   open-pull-requests-limit: 10
 - package-ecosystem: github-actions
   directory: "/"
